@@ -16,7 +16,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
     adiciona() {
-        const negociacao = this.criarNegociacao();
+        const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (!this.eDiaUtil(negociacao.data)) {
             4;
             this.mensagemView.update('Negociações devem ser criadas em dias úteis!');
@@ -29,13 +29,6 @@ export class NegociacaoController {
     eDiaUtil(data) {
         return data.getDay() > DiasDaSemana.DOMINGO
             && data.getDay() < DiasDaSemana.SABADO;
-    }
-    criarNegociacao() {
-        const exp = /-/g;
-        const date = new Date(this.inputData.value.replace(exp, ','));
-        const quantidade = parseInt(this.inputQuantidade.value);
-        const valor = parseFloat(this.inputValor.value);
-        return new Negociacao(date, quantidade, valor);
     }
     limparFormulario() {
         this.inputData.value = '';
