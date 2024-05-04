@@ -40,7 +40,9 @@ Após seguir esses passos, seu projeto estará instalado e em execução localme
 - [x] Não pode ser modificada depois de criada.
 - [x] Obrigatoriamente tem um valor, data e quantidade.
 - [x] Volume calculado multiplicando a quantidade negociada no dia pelo valor negociado.
-- [ ] Listagem das negociações após criação.
+- [x] Listagem das negociações após criação.
+- [x] Limpeza de inserção de scritps 
+- [x] Criação de negociações apenas em dias úteis.
 
 
 ## Uso
